@@ -16,12 +16,12 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="{{ site.baseurl }}/">Home</a>
+                    <a href="{{ site.baseurl }}/">{% if page.title %}Home{% else %}<u>Home</u>{% endif %}</a>
                 </li>
-                {% for page in site.pages %}
-                  {% if page.title %}
+                {% for p in site.pages %}
+                  {% if p.title %}
                   <li>
-                      <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                      <a href="{{ p.url | prepend: site.baseurl }}">{% if page.title==p.title %}{{ p.title }}{% else %}<u>{{ p.title }}</u>{% endif %}</a>
                   </li>
                   {% endif %}
                 {% endfor %}
