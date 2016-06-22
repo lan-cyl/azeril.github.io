@@ -1,12 +1,12 @@
 ---
 layout: page
-title: "Tools"
+//remove title: "Tools"
 description: "我的小小工具箱"
 header-img: "img/autumn.jpg"
 ---
 
 
-### Rule 
+### Rule
 
 [W3C Editor's Draft](http://w3c.github.io/clreq/#glyphs_sizes_and_positions_in_character_faces_of_punctuation_marks) 中文排版  
 
@@ -14,13 +14,13 @@ header-img: "img/autumn.jpg"
 
 [StateAir](http://stateair.net/) U.S. Department of State Air Quality Monitoring Program
 
-### Tools 
+### Tools
 
 [Homebrew](http://brew.sh/) software package management
 
-[Dillinger](http://dillinger.io/) 
+[Dillinger](http://dillinger.io/)
 
-[StackEdit](https://stackedit.io/editor#) 
+[StackEdit](https://stackedit.io/editor#)
 
 [Color-hex Color-Codes](http://www.color-hex.com/)  
 
@@ -30,7 +30,7 @@ header-img: "img/autumn.jpg"
 
 [Strut.io](http://strut.io/)
 
-### Service 
+### Service
 
 [GitHub](https://github.com/)
 
@@ -48,7 +48,7 @@ header-img: "img/autumn.jpg"
 
 [Evernote](https://www.evernote.com/)  
 
-[IFTTT](https://ifttt.com/) 
+[IFTTT](https://ifttt.com/)
 
 [NeteaseMusic](http://music.163.com/)  
 
@@ -60,7 +60,7 @@ header-img: "img/autumn.jpg"
 
 [Archive.org](http://archive.org/web/web.php) 时光机
 
-### Convert 
+### Convert
 
 [jp2a](https://csl.name/jp2a/) JPEG to ASCII converter
 
@@ -94,7 +94,7 @@ header-img: "img/autumn.jpg"
 
 [康熙字典](http://www.zdic.net/z/kxzd/)  
 
-### Just Try 
+### Just Try
 
 [Rainy Mood](http://www.rainymood.com/)   
 
@@ -102,7 +102,7 @@ header-img: "img/autumn.jpg"
 
 [Norse IPViking Live](http://map.ipviking.com/)  
 
-[Random.org](https://www.random.org/) 
+[Random.org](https://www.random.org/)
 
 [Breathing Earth](http://www.breathingearth.net/)  
 
@@ -113,5 +113,3 @@ header-img: "img/autumn.jpg"
 [iPanda](http://live.ipanda.com/) Panda live
 
 [The Scale of Universe2](http://htwins.net/scale2/)
-
-
