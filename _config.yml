@@ -1,32 +1,32 @@
 # Site settings
 title: Microdust
 header-img: "img/autumn2.jpg"
-tagline: "吉光片羽"  
-description: "在遙遠的地方 一切虔誠終必相遇"  
+tagline: "吉光片羽"
+description: "在遙遠的地方 一切虔誠終必相遇"
 baseurl: ""
-url: "http://azeril.me"  
+url: "http://lan-cyl.github.io"
 #url: "http://localhost:4000"
 
 # About/contact
-owner: 
-  name: "Azeril"
-  email: azeril@live.cn
-  bio: "明朝即長路 惜取此時心"
+owner:
+  name: "yongle.cai"
+  email: caiyongle91.gmail.com
+  bio: "好好学习 天天向上"
 
 # Data
-gavatar: http://dreamofbook.qiniudn.com/Az..png
+# gavatar: http://dreamofbook.qiniudn.com/Az..png
 favicon: img/favicon.ico
 
 douban_username: Azeril
-twitter_username: Azeril_Lapland  
-github_username: Azeril  
-facebook_username: Azeril_Lapland  
-weibo_username: Azeril  
-zhihu_username: Azeril  
+twitter_username: Azeril_Lapland
+github_username: lan-cyl
+facebook_username: Azeril_Lapland
+weibo_username: Azeril
+zhihu_username: Lancyl
 
-# Build settings  
-# use Github Flavored Markdown !important  
-# document: http://jekyllrb.com/docs/configuration/#kramdown  
+# Build settings
+# use Github Flavored Markdown !important
+# document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
 kramdown:
   input: GFM
@@ -46,7 +46,7 @@ timezone: Asia/Shanghai
 # Defaults for posts
 defaults:
   -
-    scope: 
+    scope:
       path: ""
       type: "posts"
     values:
@@ -54,7 +54,7 @@ defaults:
       author: "Azeril"
       header-img: "img/fantasy.jpg" # We don't want posts without a header image, that whould mean white on white
 
-# Comments 
+# Comments
 comments :
   provider : duoshuo
   duoshuo :
