@@ -1,8 +1,10 @@
 ---
 layout: page
-description: "在遙遠的地方 一切虔誠終必相遇"
+description: "源码之前 了无秘密"
 ---
+<!-- 主页的正文，包含摘要信息列表，上一页，下一页按钮 -->
 
+<!-- 文章摘要显示 -->
 {% for post in paginator.posts %}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
