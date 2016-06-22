@@ -167,34 +167,34 @@ description: 使用github pages打造一个得心应手的blog
 
 ##### 输出变量
 
-直接使用两个大括号来输出变量：`{ { page.title } }` `{ { content } }`
+直接使用两个大括号来输出变量：`{ { page.title } }`、 `{ { content } }`
 
 ##### 循环
 
 和解释性语言很像(以下代码摘自 index.html)：
 
-```
+``` jekyll
 <!-- 文章摘要显示 -->
-{% for post in paginator.posts %}
+{ % for post in paginator.posts % }
 <div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
+    <a href="{ { post.url | prepend: site.baseurl } }">
         <h2 class="post-title">
-            {{ post.title }}
+            { { post.title } }
         </h2>
-        {% if post.subtitle %}
+        { % if post.subtitle % }
         <h3 class="post-subtitle">
-            {{ post.subtitle }}
+            { { post.subtitle } }
         </h3>
-        {% endif %}
+        { % endif % }
         <div class="post-content-preview">
-            {{ post.content | strip_html | truncate:150 }}
+            { { post.content | strip_html | truncate:150 } }
         </div>
     </a>
-    <p class="post-meta">Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}</p>
+    <p class="post-meta">Posted by { % if post.author % }{ { post.author } }{ % else % }{ { site.title } }{ % endif % } on { { post.date | date: "%B %-d, %Y" } }</p>
 </div>
 
 <hr>
-{% endfor %}
+{ % endfor % }
 ```
 
 ##### 删除指定文本
@@ -202,7 +202,7 @@ description: 使用github pages打造一个得心应手的blog
 remove可以删除变量中的指定内容：
 
 ```
-{{ post.url | remove: 'http' }}
+{ { post.url | remove: 'http' } }
 ```
 
 ##### 删除html标签
@@ -210,7 +210,7 @@ remove可以删除变量中的指定内容：
 在摘要中很有用，例如上面代码中的
 
 ```
-{{ post.content | strip_html | truncate:150 }}
+{ { post.content | strip_html | truncate:150 } }
 ```
 
 ##### 代码高亮
@@ -224,22 +224,22 @@ remove可以删除变量中的指定内容：
 ##### 数组的大小
 
 ```
-{{ array | size }}
+{ { array | size } }
 ```
 
 ##### 赋值
 
 ```
-{% assign index = 1 %}
+{ % assign index = 1 % }
 ```
 
 ##### 格式化时间
 
 ```
-{{ site.time | date_to_xmlschema }} 2008-11-07T13:07:54-08:00
-{{ site.time | date_to_rfc822 }} Mon, 07 Nov 2008 13:07:54 -0800
-{{ site.time | date_to_string }} 07 Nov 2008
-{{ site.time | date_to_long_string }} 07 November 2008
+{ { site.time | date_to_xmlschema } } 2008-11-07T13:07:54-08:00
+{ { site.time | date_to_rfc822 } } Mon, 07 Nov 2008 13:07:54 -0800
+{ { site.time | date_to_string } } 07 Nov 2008
+{ { site.time | date_to_long_string } } 07 November 2008
 ```
 
 ##### 搜索指定key
