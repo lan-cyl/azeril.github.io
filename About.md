@@ -1,25 +1,30 @@
 ---
 layout: page
-title: "About"
+title: "About Me"
 description: "嘿，你总算找到我啦"
-header-img: "img/plane.jpg"
+header-img: "img/about-bg-01.jpg"
 ---
 
 <center>
     <p><img src="{{ site.gavatar }}" align="center"></p>
 </center>
 
-Ehhhh...I know it's not a good question.
+我是lan_cyl，现在是计算机专业的研究生。
 
-My Name is Azeril. You may find me in sites like douban.com / Goodreads.com / Facebook / Instagram / Twitter / Weibo.com, so on and so forth. It’s easy to know me. My short name is Az., quite easy to remember, right?
+大一从学习C语言开始对编程有感觉，然后学习数据结构、算法、刷题并参加了一些编程比赛。大二接触了Java，开始把Java作为主语言使用，然后被老师成功忽悠走上了演化计算的所谓高大上之路。用Java实现GAs, PSOs, ACOs, ITOs等群智能算法，求解了TSP，CTSP(colord TSP), VRP(Vehicle routing problem)，并水了好几篇文章，，，然后就是傻逼傻逼的考研阶段，，，，，，
 
-喜欢折腾的伪技术宅。一点点 geek，一丢丢的执著，就像吃烧烤时多少会撒一点孜然，恰到好处就够。日常之中，多的是折腾劲，也希望能添几分专注、几许勇敢。这就是我。
+研究生开始给老板搬砖，几个小伙伴一起跌跌撞撞的搞了一年多，勉强搞(hu)定(you)一个Java Web项目。混乱的管理、任务分配、易变的需求、再加上几乎没有人带，过程很辛苦，但还是学了很多东西，算是第一次完整的走完了一个软件开发流程。至少现在可以随随便便水一个项目出来，心情好了还能考虑下代码结构，做下重构，完善下可读性可扩展性等，但是这又有什么卵用呢，你真的懂客户要什么吗？客户真的懂他自己要什么吗？？？弄懂客户的意图，帮助客户弄懂客户的意图，天天都在搞这种。
 
-——Lancyl
+再后面一个人做了个C#的客户端的更新，虽然是在原版上更新但是基本上也对所有功能重新实现了个遍，最重要的依然还是弄懂客户的意图并实现，以致于项目都结题了C#语法还没搞懂呢==。这个项目略带研究性质，所以除了明确用户需求，还要花时间去设计实现方案，往往一个模块会有多个方案，然后具体编码实现比较各个方案的优劣，这个过程中慢慢觉得先做设计 让整个模块在脑子里跑的通，然后再编码实现的方式，比上面那个项目一上来就编码实现的方式，要舒服的多，当然这个项目的压力没有上一个大。
 
+再然后几个小伙伴接私活啦，一个类似58的电商平台吧，但他的行业划分更细致。一起做需求分析，概要设计，然后自己做数据库设计，发现课本的知识完全没有了呀，还是有一定困难的，一直在方便开发与数据冗余之间较量，最后开发时候发现设计的时候考虑还是不够全面呀，然后就是搭系统的前后台代码框架，用spring mvc呀mybatis呀等没有用过的框架，发现上手飕飕的快，虽然认识不深==。
+
+到此，自己也就能折腾个这样了，毕竟上不了集群，上不了分布式系统。有什么技术的进步吗？更多的还是经验吧！经验有一点点点点了，是时候涨涨技术了！！！
+
+开此博，计划读读Linux内核代码、STL源码、Java的部分源码、Spring的部分源码吧。知识能用自己的话讲出来才是自己的，所有写写博客咯，涨涨知识咯。
 
 > Live long and prosper
 
 <center>
-    <p><img src="http://dreamofbook.qiniudn.com/hacker.png" align="center"></p>
+    <p><img src="img/hacker.png" align="center"></p>
 </center>

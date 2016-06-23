@@ -1,6 +1,6 @@
 # Site settings
 title: lan_cyl's blog
-header-img: "img/autumn2.jpg"
+header-img: "img/home-bg-01.jpg"
 tagline: "吉光片羽"
 description: "源码之前 了无秘密"
 baseurl: ""
@@ -22,7 +22,7 @@ favicon: img/favicon.ico
 github_username: lan-cyl
 #facebook_username: Azeril_Lapland
 #weibo_username: Azeril
-zhihu_username: lan_cyl
+#zhihu_username: lan_cyl
 
 # Build settings
 # use Github Flavored Markdown !important
@@ -54,7 +54,7 @@ defaults:
     values:
       layout: "post"
       author: "lan_cyl"
-      header-img: "img/fantasy.jpg" # We don't want posts without a header image, that whould mean white on white
+      header-img: "img/post-bg-01.jpg" # We don't want posts without a header image, that whould mean white on white
 
 
 # Comments
