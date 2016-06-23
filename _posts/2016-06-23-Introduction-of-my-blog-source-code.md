@@ -40,15 +40,15 @@ favicon: img/favicon.ico
 <!DOCTYPE html>
 <html lang="en">
 
-{% include head.html %}
+{ % include head.html % }
 
 <body ontouchstart="">
 
-    {% include nav.html %}
+    { % include nav.html % }
 
-    {{ content }}
+    { { content } }
 
-    {% include footer.html %}
+    { % include footer.html % }
 
 </body>
 
@@ -123,7 +123,7 @@ description: post page, contains title, content, license, discuss, et al.
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
-        background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')
+        background-image: url('{ { site.baseurl } }/{ % if page.header-img % }{ { page.header-img } }{ % else % }{ { site.header-img } }{ % endif % }')
     }
 </style>
 <header class="intro-header" >
@@ -132,15 +132,15 @@ description: post page, contains title, content, license, discuss, et al.
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
                     <div class="Tags">
-                        {% for tag in page.tags %}
-                        <a class="tag" href="/Tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>
-                        {% endfor %}
+                        { % for tag in page.tags % }
+                        <a class="tag" href="/Tags/#{ { tag } }" title="{ { tag } }">{ { tag } }</a>
+                        { % endfor % }
                     </div>
-                    <h1>{{ page.title }}</h1>
-                    {% if page.subtitle %}
-                    <h2 class="subheading">{{ page.subtitle }}</h2>
-                    {% endif %}
-                    <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span>
+                    <h1>{ { page.title } }</h1>
+                    { % if page.subtitle % }
+                    <h2 class="subheading">{ { page.subtitle } }</h2>
+                    { % endif % }
+                    <span class="meta">Posted by { % if page.author % }{ { page.author } }{ % else % }{ { site.title } }{ % endif % } on { { page.date | date: "%B %-d, %Y" } }</span>
                 </div>
             </div>
         </div>
@@ -153,7 +153,7 @@ description: post page, contains title, content, license, discuss, et al.
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
 
-                {{ content }}
+                { { content } }
 
                 <hr>
 
@@ -165,16 +165,16 @@ description: post page, contains title, content, license, discuss, et al.
                 <hr>
 
                 <ul class="pager">
-                    {% if page.previous.url %}
+                    { % if page.previous.url % }
                     <li class="previous">
-                        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">&larr; Previous Post</a>
+                        <a href="{ { page.previous.url | prepend: site.baseurl | replace: '//', '/' } }" data-toggle="tooltip" data-placement="top" title="{ {page.previous.title} }">&larr; Previous Post</a>
                     </li>
-                    {% endif %}
-                    {% if page.next.url %}
+                    { % endif % }
+                    { % if page.next.url % }
                     <li class="next">
-                        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Next Post &rarr;</a>
+                        <a href="{ { page.next.url | prepend: site.baseurl | replace: '//', '/' } }" data-toggle="tooltip" data-placement="top" title="{ {page.next.title} }">Next Post &rarr;</a>
                     </li>
-                    {% endif %}
+                    { % endif % }
                 </ul>
 
                 <!-- Duoshuo Share start -->
@@ -191,10 +191,10 @@ description: post page, contains title, content, license, discuss, et al.
                 </style>
 
                 <div class="ds-share"
-                    data-thread-key="{{page.id}}" data-title="{{page.title}}"
-                    data-images="{{ site.url }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}"
-                    data-content="{{ content | strip_html | truncate:80 }} | Lancyl's blog"
-                    data-url="{{site.url}}{{page.url}}">
+                    data-thread-key="{ {page.id} }" data-title="{ {page.title} }"
+                    data-images="{ { site.url } }/{ % if page.header-img % }{ { page.header-img } }{ % else % }{ { site.header-img } }{ % endif % }"
+                    data-content="{ { content | strip_html | truncate:80 } } | Lancyl's blog"
+                    data-url="{ {site.url} }{ {page.url} }">
                     <div class="ds-share-inline">
                       <ul  class="ds-share-icons-16">
 
@@ -212,7 +212,7 @@ description: post page, contains title, content, license, discuss, et al.
 
                 <!-- 多说评论框 start -->
                 <div class="comment">
-                    <div class="ds-thread" data-thread-key="{{page.id}}" data-title="{{page.title}}" data-url="{{site.url}}{{page.url}}"></div>
+                    <div class="ds-thread" data-thread-key="{ {page.id} }" data-title="{ {page.title} }" data-url="{ {site.url} }{ {page.url} }"></div>
                 </div>
                 <!-- 多说评论框 end -->
             </div>
@@ -226,10 +226,4 @@ description: post page, contains title, content, license, discuss, et al.
 
 然后，正文部分，post内容显示、版权信息、上下一页按钮、多说分享、多说评论。
 
-
 ## 参考
-* [打造你的 GitHub Pages 专属博客](http://azeril.me/blog/Build-Your-First-GitHub-Pages-Blog.html)
-* [Jekyll 博客主题精选](http://azeril.me/blog/Selected-Collection-of-Jekyll-Themes.html)
-* [Git 教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)  
-* [Jekyll 语法简单笔记](http://github.tiankonguse.com/blog/2014/11/10/jekyll-study.html)
-* [Jekyll/Liquid API 语法文档](http://alfred-sun.github.io/blog/2015/01/10/jekyll-liquid-syntax-documentation/)
