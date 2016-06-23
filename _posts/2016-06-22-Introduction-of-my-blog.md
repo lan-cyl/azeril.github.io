@@ -288,62 +288,62 @@ remove可以删除变量中的指定内容：
 条件语句，关键字有：`if`、`unless`、`elsif`、`else`
 
 ````
-{% if user %}
-  Hello {{ user.name }}
-{% endif %}
+{ % if user % }
+  Hello { { user.name } }
+{ % endif % }
 
 # Same as above
-{% if user != null %}
-  Hello {{ user.name }}
-{% endif %}
+{ % if user != null % }
+  Hello { { user.name } }
+{ % endif % }
 
-{% if user.name == 'tobi' %}
+{ % if user.name == 'tobi' % }
   Hello tobi
-{% elsif user.name == 'bob' %}
+{ % elsif user.name == 'bob' % }
   Hello bob
-{% endif %}
+{ % endif % }
 
-{% if user.name == 'tobi' or user.name == 'bob' %}
+{ % if user.name == 'tobi' or user.name == 'bob' % }
   Hello tobi or bob
-{% endif %}
+{ % endif % }
 
-{% if user.name == 'bob' and user.age > 45 %}
+{ % if user.name == 'bob' and user.age > 45 % }
   Hello old bob
-{% endif %}
+{ % endif % }
 
-{% if user.name != 'tobi' %}
+{ % if user.name != 'tobi' % }
   Hello non-tobi
-{% endif %}
+{ % endif % }
 
 # Same as above
-{% unless user.name == 'tobi' %}
+{ % unless user.name == 'tobi' % }
   Hello non-tobi
-{% endunless %}
+{ % endunless % }
 
 # Check for the size of an array
-{% if user.payments == empty %}
+{ % if user.payments == empty % }
    you never paid !
-{% endif %}
+{ % endif % }
 
-{% if user.payments.size > 0  %}
+{ % if user.payments.size > 0  % }
    you paid !
-{% endif %}
+{ % endif % }
 
-{% if user.age > 18 %}
+{ % if user.age > 18 % }
    Login here
-{% else %}
+{ % else % }
    Sorry, you are too young
-{% endif %}
+{ % endif % }
 
 # array = 1,2,3
-{% if array contains 2 %}
+{ % if array contains 2 % }
    array includes 2
-{% endif %}
+{ % endif % }
 
 # string = 'hello world'
-{% if string contains 'hello' %}
+{ % if string contains 'hello' % }
    string includes 'hello'
-{% endif %}
+{ % endif % }
 ````
 #### 命名规则
 
