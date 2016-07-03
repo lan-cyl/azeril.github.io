@@ -21,16 +21,16 @@ $ sudo apt-get install git
 
 3.配置git的用户名、邮箱
 
-``` shell
+```shell
 $ git config --global user.name "Your Name"
 $ git config --global user.email "email@example.com"
 ```
 
 4.创建ssh-key，用于同github通信
 
-```` shell
+```shell
 $ ssh-keygen -t rsa -C "youremail@example.com"
-````
+```
 
 5.github中添加 New SSH key
 
@@ -50,9 +50,9 @@ git的使用可以参看[廖雪峰的教程](http://www.liaoxuefeng.com/wiki/001
 
 3.克隆到本地
 
-```` shell
+```shell
 $ git clone https://github.com/lan-cyl/lan-cyl.github.io.git
-````
+```
 
 好了，自己改改_post文件夹，就可以发布blog了，当然其他的文件也可以看着改一下～～～
 
@@ -173,7 +173,7 @@ description: 使用github pages打造一个得心应手的blog
 
 和解释性语言很像(以下代码摘自 index.html)：
 
-``` jekyll
+```html
 <!-- 文章摘要显示 -->
 { % for post in paginator.posts % }
 <div class="post-preview">
@@ -287,7 +287,7 @@ remove可以删除变量中的指定内容：
 
 条件语句，关键字有：`if`、`unless`、`elsif`、`else`
 
-````
+```html
 { % if user % }
   Hello { { user.name } }
 { % endif % }
@@ -344,18 +344,18 @@ remove可以删除变量中的指定内容：
 { % if string contains 'hello' % }
    string includes 'hello'
 { % endif % }
-````
+```
 #### 命名规则
 
 对于博客,名字必须是 YEAR-MONTH-DAY-title.MARKUP 的格式
 
-````
+```
 2014-11-06-memcached-code.md
 2014-11-06-memcached-lib.md
 2014-11-06-sphinx-config-and-use.md
 2014-11-07-memcached-hash-table.md
 2014-11-07-memcached-string-hash.md
-````
+```
 
 ## 参考
 * [打造你的 GitHub Pages 专属博客](http://azeril.me/blog/Build-Your-First-GitHub-Pages-Blog.html)
