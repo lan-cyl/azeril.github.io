@@ -15,20 +15,20 @@ description: 使用github pages打造一个得心应手的blog
 
 2.安装git，ubuntu下直接安装即可
 
-{% highlight shell %}
+```sh
 $ sudo apt-get install git
-{% endhighlight %}
+```
 
 3.配置git的用户名、邮箱
 
-```shell
+```sh
 $ git config --global user.name "Your Name"
 $ git config --global user.email "email@example.com"
 ```
 
 4.创建ssh-key，用于同github通信
 
-```shell
+```sh
 $ ssh-keygen -t rsa -C "youremail@example.com"
 ```
 
@@ -50,7 +50,7 @@ git的使用可以参看[廖雪峰的教程](http://www.liaoxuefeng.com/wiki/001
 
 3.克隆到本地
 
-```shell
+```sh
 $ git clone https://github.com/lan-cyl/lan-cyl.github.io.git
 ```
 
@@ -68,7 +68,7 @@ jekyll的全局配置文件，包含 网站名、域名、链接格式等等信�
 
 对于网站的头部, 底部, 侧栏等公共部分, 为了维护方便, 单独存放在该文件夹内, 使用的时候包含进去即可。
 
-引入语法：`{ % include filename% }`
+引入语法：`{% include filename%}`
 
 #### \_layouts文件夹
 
@@ -279,6 +279,13 @@ remove可以删除变量中的指定内容：
 
 得到数组指定范围的结果集
 
+<pre class="hljs-dark" style="font-family:Menlo,Monaco,Consolas,'Courier New',monospace; font-size:14px; padding:0px; margin-top:0px; margin-bottom:10px; line-height:22.399999618530273px; word-break:break-all; word-wrap:break-word; color:rgb(51,51,51); border:0px; white-space:pre-wrap; background-color:rgb(245,245,245)">
+<code class="hljs javascript" style="font-family:Menlo,Monaco,Consolas,'Courier New',monospace; font-size:undefined; padding:0.5em; color:rgb(248,248,242); display:block; background:rgb(35,36,31)">
+{% cycle <span class="hljs-string" style="color:rgb(230,219,116)">'group 1'</span>: <span class="hljs-string" style="color:rgb(230,219,116)">'one'</span>, <span class="hljs-string" style="color:rgb(230,219,116)">'two'</span>, <span class="hljs-string" style="color:rgb(230,219,116)">'three'</span> %}
+{% cycle <span class="hljs-string" style="color:rgb(230,219,116)">'group 1'</span>: <span class="hljs-string" style="color:rgb(230,219,116)">'one'</span>, <span class="hljs-string" style="color:rgb(230,219,116)">'two'</span>, <span class="hljs-string" style="color:rgb(230,219,116)">'three'</span> %}
+{% cycle <span class="hljs-string" style="color:rgb(230,219,116)">'group 2'</span>: <span class="hljs-string" style="color:rgb(230,219,116)">'one'</span>, <span class="hljs-string" style="color:rgb(230,219,116)">'two'</span>, <span class="hljs-string" style="color:rgb(230,219,116)">'three'</span> %}
+{{ for post in site.posts limit:20 }}
+</code></pre>
 ```python
 {{ for post in site.posts limit:20 }}
 ```
@@ -288,8 +295,8 @@ remove可以删除变量中的指定内容：
 条件语句，关键字有：`if`、`unless`、`elsif`、`else`
 
 ```python
-{% if user %}
-  Hello {{ user.name }}
+{ % if user % }
+  Hello { { user.name } }
 { % endif % }
 
 # Same as above
