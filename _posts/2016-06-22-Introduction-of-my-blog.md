@@ -279,11 +279,7 @@ remove可以删除变量中的指定内容：
 
 得到数组指定范围的结果集
 
-<pre class="hljs-dark" style="font-family:Menlo,Monaco,Consolas,'Courier New',monospace; font-size:14px; padding:0px; margin-top:0px; margin-bottom:10px; line-height:22.399999618530273px; word-break:break-all; word-wrap:break-word; color:rgb(51,51,51); border:0px; white-space:pre-wrap; background-color:rgb(245,245,245)">
-<code class="hljs javascript" style="font-family:Menlo,Monaco,Consolas,'Courier New',monospace; font-size:undefined; padding:0.5em; color:rgb(248,248,242); display:block; background:rgb(35,36,31)">
-{% cycle <span class="hljs-string" style="color:rgb(230,219,116)">'group 1'</span>: <span class="hljs-string" style="color:rgb(230,219,116)">'one'</span>, <span class="hljs-string" style="color:rgb(230,219,116)">'two'</span>, <span class="hljs-string" style="color:rgb(230,219,116)">'three'</span> %}
-{% cycle <span class="hljs-string" style="color:rgb(230,219,116)">'group 1'</span>: <span class="hljs-string" style="color:rgb(230,219,116)">'one'</span>, <span class="hljs-string" style="color:rgb(230,219,116)">'two'</span>, <span class="hljs-string" style="color:rgb(230,219,116)">'three'</span> %}
-{% cycle <span class="hljs-string" style="color:rgb(230,219,116)">'group 2'</span>: <span class="hljs-string" style="color:rgb(230,219,116)">'one'</span>, <span class="hljs-string" style="color:rgb(230,219,116)">'two'</span>, <span class="hljs-string" style="color:rgb(230,219,116)">'three'</span> %}
+<pre><code>
 {{ for post in site.posts limit:20 }}
 </code></pre>
 ```python
