@@ -279,17 +279,17 @@ remove可以删除变量中的指定内容：
 
 得到数组指定范围的结果集
 
-```
-{ { for post in site.posts limit:20 } }
+```python
+{{ for post in site.posts limit:20 }}
 ```
 
 ##### If / Else
 
 条件语句，关键字有：`if`、`unless`、`elsif`、`else`
 
-```html
-{ % if user % }
-  Hello { { user.name } }
+```python
+{% if user %}
+  Hello {{ user.name }}
 { % endif % }
 
 # Same as above
@@ -345,6 +345,7 @@ remove可以删除变量中的指定内容：
    string includes 'hello'
 { % endif % }
 ```
+
 #### 命名规则
 
 对于博客,名字必须是 YEAR-MONTH-DAY-title.MARKUP 的格式
