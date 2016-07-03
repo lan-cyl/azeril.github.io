@@ -15,9 +15,9 @@ description: 使用github pages打造一个得心应手的blog
 
 2.安装git，ubuntu下直接安装即可
 
-``` shell
+{% highlight shell %}
 $ sudo apt-get install git
-```
+{% endhighlight %}
 
 3.配置git的用户名、邮箱
 
