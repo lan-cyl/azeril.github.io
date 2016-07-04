@@ -68,13 +68,13 @@ I fork this repository (forking a long time, really a big program), and clone it
 | README         | 项目说明文档，配置编译内核的方法 |
 | REPORTING-BUGS | 提交BUG的注意事项 |
 
-```java
+{% highlight java %}
 public class Main {
   public static void main(String[] args) {
     System.out.println("Hello World!");
   }
 }
-```
+{% endhighlight %}
 
 ## 参考
 * [打造你的 GitHub Pages 专属博客](http://azeril.me/blog/Build-Your-First-GitHub-Pages-Blog.html)
