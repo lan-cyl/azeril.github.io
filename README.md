@@ -1,5 +1,3 @@
-# Microdust
-
 The blog fork from [azeril.me](http://azeril.me/).
 
 ## Thanks
@@ -16,6 +14,8 @@ The blog used many tool/service,many thanks to:
 * …
 
 ## How To Creat A Jekyll Blog
+
+[Introduction of my blog](https://lan-cyl.github.io/blog/Introduction-of-my-blog.html)
 
 [Build-Your-First-GitHub-Pages-Blog](http://azeril.me/blog/Build-Your-First-GitHub-Pages-Blog.html)
 

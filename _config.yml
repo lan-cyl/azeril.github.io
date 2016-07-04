@@ -31,10 +31,10 @@ markdown: kramdown
 kramdown:
   input: GFM
 highlighter: rouge
-
 gems:
-- jekyll-gallery-generator
-- jekyll-paginate
+  - rouge
+  - jekyll-gallery-generator
+  - jekyll-paginate
 permalink: none
 paginate: 8
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
@@ -62,8 +62,8 @@ comments :
   provider : duoshuo
   duoshuo :
     short_name : lan-cyl
-  disqus :
-      short_name : lan-cyl
+#  disqus :
+#      short_name : lan-cyl
 
 # Analytics and webmaster tools stuff goes here
 #google_analytics: UA-66863061-1

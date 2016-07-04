@@ -68,7 +68,7 @@ jekyll的全局配置文件，包含 网站名、域名、链接格式等等信�
 
 对于网站的头部, 底部, 侧栏等公共部分, 为了维护方便, 单独存放在该文件夹内, 使用的时候包含进去即可。
 
-引入语法：`{% include filename%}`
+引入语法：`{ % include filename % }`
 
 #### \_layouts文件夹
 
@@ -80,7 +80,7 @@ jekyll的全局配置文件，包含 网站名、域名、链接格式等等信�
 
 在儿子中，指定父节点模板，例如 指定使用post模板：
 
-```
+```Liquid
 ---
 layout: post
 ---
@@ -104,7 +104,7 @@ layout: post
 
 头部定义主要用于指定模板(layout)和定义一些变量, 比如 标题(title), 描述(description), 分类(category/categories), tags, 是否发布(published), 自定义变量。
 
-```
+```Liquid
 ---
 layout: post
 title: Introduction of my blog
@@ -173,7 +173,7 @@ description: 使用github pages打造一个得心应手的blog
 
 和解释性语言很像(以下代码摘自 index.html)：
 
-```html
+```Liquid
 <!-- 文章摘要显示 -->
 { % for post in paginator.posts % }
 <div class="post-preview">
@@ -201,7 +201,7 @@ description: 使用github pages打造一个得心应手的blog
 
 remove可以删除变量中的指定内容：
 
-```
+```Liquid
 { { post.url | remove: 'http' } }
 ```
 
@@ -209,13 +209,13 @@ remove可以删除变量中的指定内容：
 
 在摘要中很有用，例如上面代码中的
 
-```
+```Liquid
 { { post.content | strip_html | truncate:150 } }
 ```
 
 ##### 代码高亮
 
-```
+```Liquid
 { % highlight ruby linenos % }
 \# some ruby code
 { % endhighlight % }
@@ -223,19 +223,19 @@ remove可以删除变量中的指定内容：
 
 ##### 数组的大小
 
-```
+```Liquid
 { { array | size } }
 ```
 
 ##### 赋值
 
-```
+```Liquid
 { % assign index = 1 % }
 ```
 
 ##### 格式化时间
 
-```
+```Liquid
 { { site.time | date_to_xmlschema } } 2008-11-07T13:07:54-08:00
 { { site.time | date_to_rfc822 } } Mon, 07 Nov 2008 13:07:54 -0800
 { { site.time | date_to_string } } 07 Nov 2008
@@ -244,20 +244,20 @@ remove可以删除变量中的指定内容：
 
 ##### 搜索指定key
 
-```
+```Liquid
 # Select all the objects in an array where the key has the given value.
 { { site.members | where:"graduation_year","2014" } }
 ```
 
 ##### 排序
 
-```
+```Liquid
 { { site.pages | sort: 'title', 'last' } }
 ```
 
 ##### to json
 
-```
+```Liquid
 { { site.data.projects | jsonify } }
 ```
 
@@ -265,13 +265,13 @@ remove可以删除变量中的指定内容：
 
 一个对象序列化为一个字符串
 
-```
+```Liquid
 { { page.tags | array_to_sentence_string } }
 ```
 
 ##### 单词的个数
 
-```
+```Liquid
 { { page.content | number_of_words } }
 ```
 
@@ -279,18 +279,15 @@ remove可以删除变量中的指定内容：
 
 得到数组指定范围的结果集
 
-<pre><code>
-{{ for post in site.posts limit:20 }}
-</code></pre>
-```python
-{{ for post in site.posts limit:20 }}
+```Liquid
+{ { for post in site.posts limit:20 } }
 ```
 
 ##### If / Else
 
 条件语句，关键字有：`if`、`unless`、`elsif`、`else`
 
-```python
+```Liquid
 { % if user % }
   Hello { { user.name } }
 { % endif % }
