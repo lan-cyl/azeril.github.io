@@ -1,16 +1,16 @@
 ---
 layout: post
-title: Understanding the linux kernel (2) thread and process
+title: Understanding the linux kernel (3) thread and process
 categories: [kernel ]
 tags: [linux,kernel, ]
 description: 理解linux 线程设计
 ---
 
-## 一．进程？轻量进程？线程？内核线程？
+## 一、进程？轻量进程？线程？内核线程？
 
 欲知详情，还是manual手册靠谱啊！！！还在为进程、轻量进程、线程、用户线程、内核线程傻傻分不清楚吗？看看manual吧
 
-### man fork
+### 1.1 man fork
 
 fork通过复制调用进程来创建一个新进程作为子进程，父子进程在独立的内存空间运行。一些特点，具体看`man fork`
 
@@ -27,10 +27,11 @@ fork通过复制调用进程来创建一个新进程作为子进程，父子进�
 
 NOTES
 
-Under Linux, fork() is implemented using copy-on-write pages, so the only penalty that it incurs is the time and memory required to duplicate the parent's page tables, and create a unique task structure for the child.
+> Under Linux, fork() is implemented using copy-on-write pages, so the only penalty that it incurs is the time and memory required to duplicate the parent's page tables, and create a unique task structure for the child.
 
-**c library/kernel differences**
-Since version 2.3.3, rather than invoking the kernel's fork() system call, the glibc fork() wrapper that is provided as part of the NPTL threading implementation invokes clone(2) with flags that provide the same effect as the traditional system call. (A call to fork() is equivalent to a call to clone(2) specifying flags as just SIGCHILD.) The glibc wrapper invokes any fork handlers that have been established using pthread_atfork(3).
+> **c library/kernel differences** Since version 2.3.3, rather than invoking the kernel's fork() system call, the glibc fork() wrapper that is provided as part of the NPTL threading implementation invokes clone(2) with flags that provide the same effect as the traditional system call. (A call to fork() is equivalent to a call to clone(2) specifying flags as just SIGCHILD.) The glibc wrapper invokes any fork handlers that have been established using pthread_atfork(3).
+
+> ——man fork:NOTES
 
 以上是 man：NOTES 部分的内容，大意为
 
@@ -38,7 +39,7 @@ Linux中使用copy-on-write来实现fork调用，所需的时空开销仅仅是�
 
 c函数库跟内核在fork上的实现的不同点：Linux 2.3.3之后，glibc的fork()不是简单的调用fork()系统调用来实现，而被封装为 **“调用clone(2)来实现线程的NPTL”** 的一部分，其中clone()调用具有flags参数，能产生跟传统系统调用fork()一样的效果。(当flags参数为SIGCHLD时，fork()系统调用跟clone()系统调用一样) glibc使用pthread_atfork(3)来实现所有的fork调用。
 
-### man clone(2)
+### 1.2 man clone(2)
 
 ```c
 /* glibc封装的函数原型 */
@@ -72,7 +73,7 @@ long clone(unsigned long flags, void *child_stack,
 
 大意就是：clone()可以通过参数设置共享进程的执行上下文(内存空间、文件描述符、信号)，NPTL通过clone()来实现线程。所以到目前为止，Linux都是使用进程来实现线程的。Linux使用的线程库NPTL，也可以说是对clone实现的封装，以此带来了可移植性。
 
-### Linux kernel development
+### 1.3 Linux kernel development
 
 《Linux 内核设计和实现》3.4节《The Linux Implementation of Threads》写的很清楚呢：
 
@@ -92,7 +93,7 @@ Linux根本没有线程、没有轻量进程，只有进程的实现，因为我
 
 所以Linux只实现了进程，线程是对共享资源的进程的称呼，都是通过clone()系统调用创建的。
 
-### Kernel Threads
+### 1.4 Kernel Threads
 
 内核线程是内核在内核空间做的操作。
 
@@ -106,7 +107,7 @@ Linux根本没有线程、没有轻量进程，只有进程的实现，因为我
 
 > The new task is created via the *clone()* system call by the *kthread* kernel process. The process is created in an unrunnable state; it will not start running until explicitly woken up via *wake_up_process()*. A process can be created and made runnable with a single function *kthread_run()*.
 
-### 小结
+### 1.5 小结
 
 线程有两大优势：1.共享资源 2.轻量
 
@@ -116,9 +117,9 @@ Linux的进程已经足够轻量了，所以我只要再实现下共享资源就
 
 NPTL是Linux现在使用的线程库，内部也是使用clone()系统调用。内核线程也就是没有用户空间的只能在内核空间活动的进程。一切皆是进程！！！
 
-## 二．Linux线程的实现
+## 二、Linux线程的实现
 
-### POSIX threads
+### 2.1 POSIX threads
 
 POSIX.1定义了多线程编程的接口，即POSIX threads, or Pthreads. 每个进程可以有多个线程，这些线程共享内存空间，但是各个线程有自己的线程栈。
 
@@ -152,7 +153,7 @@ POSIX.1也指明了线程独有的属性：
  - capabilities
  - CPU affinity
 
-### Linux implementations of POSIX threads
+### 2.2 Linux implementations of POSIX threads
 
 至今，总共出现了两种线程库的实现：
 
@@ -175,7 +176,7 @@ linux上的线程就是基于轻量进程, 由用户态的pthread库实现的。
  5. 当"进程"收到一个致命信号(比如由于段错误收到SIGSEGV信号), 对应的这一组task_struct将全部退出;
  6. 等等(以上可能不够全);
 
-### 关于NPTL
+### 2.3 关于NPTL
 
 NPTL实现了前面提到的POSIX的全部5点要求。 但是，实际上，与其说是NPTL实现了，不如说是linux内核实现了。还有如下一点POSIX.1没能实现：
 
@@ -201,7 +202,7 @@ NPTL实现了前面提到的POSIX的全部5点要求。 但是，实际上，与
 
 当线程停止/继续, 或者是收到一个致命信号时, 内核会将处理动作施加到整个线程组中。
 
-## 线程创建
+## 三、线程创建
 
 ```c
 /**
@@ -335,10 +336,14 @@ main(int argc, char *argv[])
 
 ```
 
-## reference：
+## 参考文章
 
-《Linux kernel development》
-[Linux 线程实现机制 IBM2003](http://www.ibm.com/developerworks/cn/linux/kernel/l-thread/)
-[Linux 线程模型的比较：LinuxThreads 和 NPTL IBM2006](http://www.ibm.com/developerworks/cn/linux/l-threading.html)
-[linux线程浅析](http://blog.chinaunix.net/uid-28541347-id-4406541.html)
-[Linux进程、线程模型，LWP，pthread_self()](http://blog.csdn.net/tianyue168/article/details/7403693)
+1. 《Linux kernel development》
+
+2. [Linux 线程实现机制 IBM2003](http://www.ibm.com/developerworks/cn/linux/kernel/l-thread/)
+
+3. [Linux 线程模型的比较：LinuxThreads 和 NPTL IBM2006](http://www.ibm.com/developerworks/cn/linux/l-threading.html)
+
+4. [linux线程浅析](http://blog.chinaunix.net/uid-28541347-id-4406541.html)
+
+5. [Linux进程、线程模型，LWP，pthread_self()](http://blog.csdn.net/tianyue168/article/details/7403693)
