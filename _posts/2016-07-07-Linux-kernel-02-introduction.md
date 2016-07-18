@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Understanding the linux kernel (2) introduction
-categories: [kernel ]
-tags: [linux,kernel, ]
+title: Linux内核分析(3) 简介
+categories: [linux kernel ]
+tags: [linux kernel, ]
 description: linux kernel简介
 ---
 

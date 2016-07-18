@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Understanding the linux kernel (1) get the kernel
-categories: [blog ]
-tags: [Jekyll, Blog, ]
+title: Linux内核分析(1) 获得源码
+categories: [linux kernel ]
+tags: [linux kernel, ]
 description: linux 内核分析第一篇，获取内核源码
 ---
 

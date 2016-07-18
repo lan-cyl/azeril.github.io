@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Understanding the linux kernel (3) thread and process
-categories: [kernel ]
-tags: [linux,kernel, ]
+title: Linux内核分析(3) 线程剖析
+categories: [linux kernel ]
+tags: [linux kernel, ]
 description: 理解linux 线程设计
 ---
 
@@ -24,8 +24,6 @@ fork通过复制调用进程来创建一个新进程作为子进程，父子进�
  - 子进程不继承timers
  - 子进程不继承异步I/O相关的操作和内容
  - 等等...
-
-NOTES
 
 > Under Linux, fork() is implemented using copy-on-write pages, so the only penalty that it incurs is the time and memory required to duplicate the parent's page tables, and create a unique task structure for the child.
 

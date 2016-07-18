@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Understanding the linux kernel (4) inode
-categories: [blog ]
-tags: [Jekyll, Blog, ]
+title: Linux内核分析(3) 文件系统--inode剖析
+categories: [linux kernel ]
+tags: [linux kernel, ]
 description: linux 的文件系统 struct inode
 ---
 
