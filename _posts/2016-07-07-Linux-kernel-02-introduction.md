@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Linux内核分析(3) 简介
+title: Linux内核分析(2) 简介
 categories: [linux kernel ]
 tags: [linux kernel, ]
 description: linux kernel简介
