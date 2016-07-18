@@ -1,9 +1,9 @@
 ---
 layout: post
-title: The annotated linux kernel sources(1) -- get the kernel
+title: Understanding the linux kernel (1) get the kernel
 categories: [blog ]
 tags: [Jekyll, Blog, ]
-description: linux 内核源码剖析第一篇，获取内核源码
+description: linux 内核分析第一篇，获取内核源码
 ---
 
 
@@ -79,6 +79,6 @@ public class Main {
 ## 参考
 * [打造你的 GitHub Pages 专属博客](http://azeril.me/blog/Build-Your-First-GitHub-Pages-Blog.html)
 * [Jekyll 博客主题精选](http://azeril.me/blog/Selected-Collection-of-Jekyll-Themes.html)
-* [Git 教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)  
+* [Git 教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
 * [Jekyll 语法简单笔记](http://github.tiankonguse.com/blog/2014/11/10/jekyll-study.html)
 * [Jekyll/Liquid API 语法文档](http://alfred-sun.github.io/blog/2015/01/10/jekyll-liquid-syntax-documentation/)
