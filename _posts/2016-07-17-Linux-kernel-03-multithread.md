@@ -345,3 +345,5 @@ main(int argc, char *argv[])
 4. [linux线程浅析](http://blog.chinaunix.net/uid-28541347-id-4406541.html)
 
 5. [Linux进程、线程模型，LWP，pthread_self()](http://blog.csdn.net/tianyue168/article/details/7403693)
+
+6. [fork, vfork和 clone实现分析 这个挺清晰](http://blog.chinaunix.net/uid-28541347-id-4598097.html)
