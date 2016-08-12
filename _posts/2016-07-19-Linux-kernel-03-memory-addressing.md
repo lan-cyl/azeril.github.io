@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Linux内核分析(3) 内存地址
+title: Linux内核分析(4) 内存地址
 categories: [linux kernel ]
 tags: [linux kernel, ]
 description: linux kernel内存地址分析
