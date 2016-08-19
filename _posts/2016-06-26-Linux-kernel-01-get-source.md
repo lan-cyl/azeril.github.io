@@ -13,6 +13,8 @@ Linux kernel sources tree can be find in [github](https://github.com/torvalds/li
 
 I fork this repository (forking a long time, really a big program), and clone it to my locale pc. `git clone https://github.com/torvalds/linux.git`
 
+Also, you can use Ubuntu's package manager: `sudo apt install linux-source-4.4.0`, then unzip the '/usr/src/linux-source-4.4.0.tar.bz2'
+
 ## the kernel source tree
 
 *Table 1 Directories in the root of the kernel source tree*
@@ -67,14 +69,6 @@ I fork this repository (forking a long time, really a big program), and clone it
 | Makefile       | 编译配置文件 |
 | README         | 项目说明文档，配置编译内核的方法 |
 | REPORTING-BUGS | 提交BUG的注意事项 |
-
-{% highlight java %}
-public class Main {
-  public static void main(String[] args) {
-    System.out.println("Hello World!");
-  }
-}
-{% endhighlight %}
 
 ## 参考
 * [打造你的 GitHub Pages 专属博客](http://azeril.me/blog/Build-Your-First-GitHub-Pages-Blog.html)
