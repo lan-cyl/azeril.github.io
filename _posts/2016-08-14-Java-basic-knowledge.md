@@ -90,6 +90,8 @@ nio面向缓存、可以设置非阻塞、使用selector多路选择
 
 23.JDK 1.7与1.8新特性？
 
+[新特性](http://blog.chinaunix.net/uid-29618857-id-4416835.html)
+
 24.设计模式：单例、工厂、适配器、责任链、观察者、策略等等。
 
 10.数据库事务并发问题
@@ -139,3 +141,9 @@ SecurityInterceptor.preHandler();
 	2. 使用缓存，如memcache，redias，cassandra分布式缓存；
 	3. 使用数据库集群，如mysql集群，oracle数据库集群。
 通过分布式解决 访问量、数据量大的问题。
+
+参考：
+
+* [JDK8 新特性](http://blog.chinaunix.net/uid-29618857-id-4416835.html)
+* [面试心得与总结---BAT、网易、蘑菇街](http://sanwen8.cn/p/1fcgrN7.html)
+* [Java研发方向如何准备BAT技术面试](http://www.jianshu.com/p/05f42258850b)

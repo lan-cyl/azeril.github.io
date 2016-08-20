@@ -1,13 +1,12 @@
 ---
 layout: post
-title: Linux内核分析(1) 获得源码
+title: Linux内核分析（二）源码介绍
 categories: [linux kernel ]
 tags: [linux kernel, ]
-description: linux 内核分析第一篇，获取内核源码
+description: linux 内核源码介绍
 ---
 
-
-## obtain a copy
+## 获取源码
 
 Linux kernel sources tree can be find in [github](https://github.com/torvalds/linux).
 
@@ -15,7 +14,7 @@ I fork this repository (forking a long time, really a big program), and clone it
 
 Also, you can use Ubuntu's package manager: `sudo apt install linux-source-4.4.0`, then unzip the '/usr/src/linux-source-4.4.0.tar.bz2'
 
-## the kernel source tree
+## 内核源码的结构
 
 *Table 1 Directories in the root of the kernel source tree*
 
@@ -57,7 +56,7 @@ Also, you can use Ubuntu's package manager: `sudo apt install linux-source-4.4.0
 | README         | 项目说明文档，配置编译内核的方法 |
 | REPORTING-BUGS | 提交BUG的注意事项 |
 
-## Documentataion folder about
+## Documentataion 文件夹
 
 | File           | Description                  |
 |:---------------|:-----------------------------|
@@ -70,9 +69,8 @@ Also, you can use Ubuntu's package manager: `sudo apt install linux-source-4.4.0
 | README         | 项目说明文档，配置编译内核的方法 |
 | REPORTING-BUGS | 提交BUG的注意事项 |
 
-## 参考
-* [打造你的 GitHub Pages 专属博客](http://azeril.me/blog/Build-Your-First-GitHub-Pages-Blog.html)
-* [Jekyll 博客主题精选](http://azeril.me/blog/Selected-Collection-of-Jekyll-Themes.html)
-* [Git 教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
-* [Jekyll 语法简单笔记](http://github.tiankonguse.com/blog/2014/11/10/jekyll-study.html)
-* [Jekyll/Liquid API 语法文档](http://alfred-sun.github.io/blog/2015/01/10/jekyll-liquid-syntax-documentation/)
+## 参考：
+
+* Understanding the linux kernel 3E
+* Linux kernel development 3E
+* Advanced programing in the UNIX environment 3E

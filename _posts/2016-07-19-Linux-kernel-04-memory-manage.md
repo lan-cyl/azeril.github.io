@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Linux内核分析(4) 内存地址
+title: Linux内核分析（四）内存管理
 categories: [linux kernel ]
 tags: [linux kernel, ]
 description: linux kernel内存地址分析
@@ -19,3 +19,11 @@ description: linux kernel内存地址分析
 ## 四、Paging in Hardware
 
 ## 五、Paging in Linux
+
+参考：
+
+* Understanding the linux kernel 3E
+* Linux kernel development 3E
+* Advanced programing in the UNIX environment 3E
+* [深入理解计算机系统-之-内存寻址（一）--存储管理机制（虚拟地址，线性地址，物理地址） ](http://blog.csdn.net/gatieme/article/details/50646824)
+* [《Linux内核设计与实现》读书笔记（十二）- 内存管理](http://www.cnblogs.com/wang_yb/archive/2013/05/23/3095907.html)
