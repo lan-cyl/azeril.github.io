@@ -132,6 +132,10 @@ libc对内存的分配有两种途径，一是调整堆的大小，二是mmap一
 * Advanced programing in the UNIX environment 3E
 * [深入理解计算机系统-之-内存寻址（一）--存储管理机制（虚拟地址，线性地址，物理地址） ](http://blog.csdn.net/gatieme/article/details/50646824)
 * [《Linux内核设计与实现》读书笔记（十二）- 内存管理](http://www.cnblogs.com/wang_yb/archive/2013/05/23/3095907.html)
+* [Linux 内存管理](http://blog.csdn.net/hguisu/article/details/6152921)
+* [Linux 内存管理](http://www.cnblogs.com/autum/archive/2012/10/12/linuxmalloc.html)
+* [Linux 内存管理大图][1]
+* [Linux 内存管理原理][2]
 
 [1]: http://life.chinaunix.net/bbsfile/forum/linux/month_0811/20081111_9477e6fe879a69d35b15pPat2RQUajuk.gif "Linux 内存管理大图"
 [2]: http://www.cnblogs.com/zhaoyl/p/3695517.html "Linux 内存管理原理"
