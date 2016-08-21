@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Linux内核分析(5) 细说进程1
+title: Linux 进程剖析
 categories: [linux kernel ]
 tags: [linux kernel, ]
 description: linux kernel细说进程

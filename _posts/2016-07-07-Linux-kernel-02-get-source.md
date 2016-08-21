@@ -8,11 +8,11 @@ description: linux 内核源码介绍
 
 ## 获取源码
 
-Linux kernel sources tree can be find in [github](https://github.com/torvalds/linux).
+可以在Linux Kernel的官网下载 [https://www.kernel.org/](https://www.kernel.org/).
 
-I fork this repository (forking a long time, really a big program), and clone it to my locale pc. `git clone https://github.com/torvalds/linux.git`
+也可以从Github fork一个 `git clone https://github.com/torvalds/linux.git`
 
-Also, you can use Ubuntu's package manager: `sudo apt install linux-source-4.4.0`, then unzip the '/usr/src/linux-source-4.4.0.tar.bz2'
+也可以从包管理器里下载，比如Ubuntu下 `sudo apt install linux-source-4.4.0`, 然后解压缩 '/usr/src/linux-source-4.4.0.tar.bz2'
 
 ## 内核源码的结构
 

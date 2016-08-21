@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Linux内核分析(3) 线程剖析
+title: Linux 线程剖析
 categories: [linux kernel ]
 tags: [linux kernel, ]
 description: 理解linux 线程设计

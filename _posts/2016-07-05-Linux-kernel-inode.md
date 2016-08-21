@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Linux文件系统--inode剖析
+title: Linux inode剖析
 categories: [linux kernel ]
 tags: [linux kernel, ]
 description: linux 的文件系统 struct inode
