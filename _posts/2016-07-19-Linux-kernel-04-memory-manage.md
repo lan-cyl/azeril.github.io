@@ -14,7 +14,7 @@ description: linux kernel内存地址分析
 ![Linux内存管理大图](../img/linux-mm.gif)
 
 发现个更完整点的图，[互补着看][2]
-![Linux 内存管理框架图](../img/linux-mm2.gif)
+![Linux 内存管理框架图](../img/linux-mm3.png)
 
 针对上图，说几句，
 
