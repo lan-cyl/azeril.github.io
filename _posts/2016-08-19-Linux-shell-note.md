@@ -1,10 +1,4 @@
----
-layout:
-title: 
-categories: [linux ]
-tags: [linux, ]
-description: Linux shell命令笔记
----
+## Linux shell命令笔记
 
 1.linux下查看文件第几行内容的方法?
 
