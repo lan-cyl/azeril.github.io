@@ -1,6 +1,6 @@
 ---
 layout:
-title: " "
+title: 
 categories: [linux ]
 tags: [linux, ]
 description: Linux shell命令笔记
