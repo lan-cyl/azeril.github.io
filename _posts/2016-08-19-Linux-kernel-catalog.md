@@ -18,9 +18,9 @@ description: Linux内核系列文章 - 目录
 
 [Linux内核分析（五）虚拟文件系统](https://lan-cyl.github.io/linux%20kernel/Linux-kernel-05-vfs.html)
 
-[五、进程]()
+[Linux内核分析（六）进程剖析](https://lan-cyl.github.io/linux%20kernel/Linux-kernel-06-process.html)
 
-[六、进程控制]()
+[Linux内核分析（六）进程剖析 - 进程间通信](https://lan-cyl.github.io/linux%20kernel/Linux-kernel-06-01-process-IPC.html)
 
 [七、进程关系]()
 

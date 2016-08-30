@@ -8,8 +8,6 @@ description: APUE 进程间通信
 
 #### 管道
 
-#### 函数popen和pclose
-
 #### FIFO
 
 #### XSI IPC
