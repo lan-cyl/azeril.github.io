@@ -1,12 +1,10 @@
 ---
 layout: post
-title: APUE 进程间通信
+title: Linux内核分析（六）进程剖析 - 进程间通信
 categories: [linux kernel ]
 tags: [linux kernel, ]
 description: APUE 进程间通信
 ---
-
-### 进程间通信
 
 #### 管道
 
