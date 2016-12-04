@@ -30,7 +30,7 @@ wait\notify\equals\hashCode\toString
 
 链表实现方式和线程安全
 
-7.String、StringBuffer、StrinbBuilder的区别
+7.String、StringBuffer、StringBuilder的区别
 
 String是final修饰的不可变对象；StringBuffer是线程安全的
 
@@ -48,7 +48,7 @@ Throwable包含两个子类: Error 和 Exception；OOM内存不足，内存泄�
 
 12.Java多态的实现原理？
 
-强制多态、重载的多态、参数的多态、包含的多态；可以单独开篇文章了[【解惑】Java动态绑定机制的内幕](http://hxraid.iteye.com/blog/428891);[jvm specification ](http://docs.oracle.com/javase/specs/jvms/se7/html/jvms-5.html)
+看27条
 
 13.HashMap遍历中删除？
 
@@ -72,49 +72,81 @@ aupe说，1有时候需要维护per-thread的数据 2他提供了让基于进程
  - wait必须用于synchronized块内，否则抛出IllegalMonitorStateException，会释放锁；sleep可以用于任何地方
  - wait也可加等待超时时间参数，wait notify需要在获得锁后调用；
 
+如何正确停止一个线程？
+
+* 1. 使用退出标志，线程检查到退出标志时，正常return
+* 2. 使用stop方法强行退出，废弃方法不推荐
+* 3. 使用interrupt方法中断线程
+
+参见：http://www.cnblogs.com/greta/p/5624839.html
+
 18.ThreadPool用法与优势？
 
 降低资源消耗、提高响应速度、提高线程可管理性
 
-19.线程同步的方法：synchronized、lock、reentrantLock、readWriteLock等
+线程池原理？
+
+线程池中的线程数少于coreThreadPoolSize时，创建新的线程来执行任务；多于coreThreadPoolSize时，便将任务放入缓存队列；当缓存队列满时，创建新的线程来处理；当线程数大于maxThreadPoolSize时，拒绝服务
+
+线程池的实现类是ThreadPoolExecutor->AbstractExecutorServer->ExecutorServer->Executor，当时Jdk封装了Executors工具类，提供了几个工厂方法，用户生成不同类型的ThreadPoolExecutor线程池。
+
+参看：http://www.importnew.com/19011.html
+
+19.线程同步的方法：synchronized、lock、reentrantLock、ReentrantReadWriteLock等
+
+_ReentrantLock源码，使用BlockingQueue作为模板方法模式_
+
+参看：http://www.raychase.net/1912  
+参看：http://www.cnblogs.com/dolphin0520/p/3923167.html
 
 20.写出生产者消费者模式
 
 用个LinkedBlockingQueue就可以
 
-21.Concurrent包里的其他东西：BlockingQueue、CountDownLatch、Barries等等
+21.Concurrent包里的其他东西：BlockingQueue、CountDownLatch、CycleBarries等等
 
 22.Java IO与NIO？
 
 nio面向缓存、可以设置非阻塞、使用selector多路选择
 
+aio将实际的读写操作交给操作系统，等待读写完毕再通知进程
+
 23.JDK 1.7与1.8新特性？
 
 [新特性](http://blog.chinaunix.net/uid-29618857-id-4416835.html)
 
-24.设计模式：单例、工厂、适配器、责任链、观察者、策略等等。
+阻塞、非阻塞，同步、异步的区别：http://blog.csdn.net/hguisu/article/details/7453390
 
-10.数据库事务并发问题
+24.设计模式：单例、工厂、适配器、责任链、观察者、策略、代理模式等等。
 
-多个事务同时访问数据库时，会发生如下5类问题：3类数据读问题（脏读、不可重复读、幻读）2类数据更新问题（第一类丢失更新、第二类丢失更新）
- 1. 脏读（dirty read）：A事务读取B事务尚未提交的更改数据并在这个基础上操作。如果B事务回滚，那么A事务读到的数据根本不是合法的，成为脏读。
- 2. 不可重复读（unrepeatable read）:A事务读取B事务已经提交的更改（或删除）数据时，在B事务提交前后A事务读取的结果不一致。———加行级锁，数据库默认
- 3. 幻读（phantom read）：B事务新增一条记录的情况下，A事务在B事务提交前后读取到的数据条数不一致。——加表锁，开销太大，一般都不加
- 4. 第一类丢失更新：A事务撤销时，把B事务提交的数据修改覆盖掉。
- 5. 第二类丢失更新：A事务提交时，把B事务提交的数据修改覆盖掉。
+25.虚拟机类加载过程
 
-11.数据库的悲观锁和乐观锁
+   加载   从各个地方获取输入流
+-> 验证   文件格式？元数据 字段\方法是否于父类冲突？字节码里的数据流 控制流合法？符号引用合法？，要先加载父类
+-> 准备   为类变量分配内存(方法区)，初始为0值。常量初始化对应值
+-> 解析   常量池中的符号引用替换为直接引用，仅针对invokestatic和invokespecial指令引用的非虚函数（静态、私有、构造、父类方法）
+          在运行时常量池中记录直接引用，并把对应常量标示为已解析状态。invokedynamic指令不受解析状态影响，实际运行到这条指令时才动态解析，叫动态链接
+          类与接口的解析：如果是数组先加载数组元素类型，否则直接加载元素类型，最后判断元素类型的访问权限
+          字段解析：先加载所属的类或接口，判断是否包含该字段，否则自下而上的搜索各个接口，还没有的话自下而上的搜索父类字段，最后也是权限验证。虚拟机实现的更加严格，如果字段同时出现在接口和父类中、或者自己或父类的多个接口中，则拒绝编译
+          类方法解析：先加载所属的类或接口，如果是个接口就抛出错误。在类中查找匹配的方法，没有就递归的去父类里找，还没有就去接口里找抛出AbstractMethodError异常，都没有就抛出NoSuchMethodError。最后验证权限。
+          接口方法解析！！！接口方法，有个卵用？？？难道不是指向实现类的方法
+-> 初始化 编译器将类变量的赋值语句，静态代码块 按照源代码中的顺序自动生产<clinit>方法；父类的<clinit>先执行。
 
- - 悲观锁：假设数据肯定会冲突，所以在数据开始读取的时候就把数据锁住。
- - 乐观锁：认为数据一般不会造成冲突，所以在数据提交时才会检查数据是否冲突，如果发生冲突则返回错误信息，让用户决定如何去做。
- - 乐观锁的三种实现方式：（都是CAS操作）
-	1. 整个数据copy到应用中，提交时对比当前数据的数据和copy的数据是否一致，由于double型不可比，所以一般不用。
-	2. 采用版本戳，数据表增加一个新的column，比如是number型的，每次更新时都加一，通过对比number来判断一致性。
-	3. 采用时间戳，跟第2中类似，不过数据类型是timestamp型的。
+26.类加载器
 
-12.Innodb默认使用乐观锁还是悲观锁
+通过一个类的全限定名来获取描述此类的二进制字节流。双亲委派模型，先交给父类加载器加载
 
-默认使用乐观锁，MVCC（多版本并发控制）来处理不可重复读和幻读。Innodb会在每行数据后添加两个额外的隐藏值来实现MVCC。（参见http://tech.meituan.com/innodb-lock.html）
+27.虚拟机字节码执行引擎？
+
+解析：就是类加载过程中的解析阶段，将非虚方法的符号引用替换为直接引用，非虚方法在运行期是不会改变的
+
+静态分派：所有依赖静态类型来定位方法执行版本的分派动作，一般用于方法重载(Overload)。发生在编译阶段
+
+动态分派：跟重写(Override)紧密关联。invokevirtual指令需要两个操作数，一个取自操作数栈顶的对象指针，一个是指令后面跟的符号引用。1.找到对象的实际类型 2.在类型中找到与符号引用的描述符和简单名称都相符的方法，判断权限并返回这个方法的直接引用，结束 3.在父类中进行搜索和验证
+
+动态分派的实现：方法区建立虚方法表，存放各个方法的实际入口地址，具体可看《深入理解JVM》的P257的 图8-3 方法表结构
+
+28.
 
 
 tomcat使用线程池、异步io来监听客户端socket请求：
@@ -137,13 +169,16 @@ SecurityInterceptor.preHandler();
 15.一个网站有很大的访问量，有什么办法来解决？
 
 主要从架构层面解决：
+
 	1. 使用服务器集群，如tomcat集群；
 	2. 使用缓存，如memcache，redias，cassandra分布式缓存；
 	3. 使用数据库集群，如mysql集群，oracle数据库集群。
+
 通过分布式解决 访问量、数据量大的问题。
 
-参考：
+## 参考：
 
 * [JDK8 新特性](http://blog.chinaunix.net/uid-29618857-id-4416835.html)
 * [面试心得与总结---BAT、网易、蘑菇街](http://sanwen8.cn/p/1fcgrN7.html)
 * [Java研发方向如何准备BAT技术面试](http://www.jianshu.com/p/05f42258850b)
+* [面试总结 -- ImportNew](http://www.importnew.com/21445.html#comment-509248)

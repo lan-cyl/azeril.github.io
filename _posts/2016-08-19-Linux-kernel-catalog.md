@@ -20,13 +20,11 @@ description: Linux内核系列文章 - 目录
 
 [Linux内核分析（六）进程剖析](https://lan-cyl.github.io/linux%20kernel/Linux-kernel-06-process.html)
 
-[Linux内核分析（六）进程剖析 - 进程间通信](https://lan-cyl.github.io/linux%20kernel/Linux-kernel-06-01-process-IPC.html)
+[Linux内核分析（七）进程间通信](https://lan-cyl.github.io/linux%20kernel/Linux-kernel-06-01-process-IPC.html)
 
-[七、进程关系]()
+[八、进程关系]()
 
-[八、信号与中断]()
-
-[九、进程间通信]()
+[九、信号与中断]()
 
 [十、线程]()
 

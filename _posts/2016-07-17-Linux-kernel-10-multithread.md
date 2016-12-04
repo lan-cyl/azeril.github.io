@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Linux 线程剖析
+title: Linux内核分析（十）线程
 categories: [linux kernel ]
 tags: [linux kernel, ]
 description: 理解linux 线程设计
@@ -200,7 +200,7 @@ NPTL实现了前面提到的POSIX的全部5点要求。 但是，实际上，与
 
 当线程停止/继续, 或者是收到一个致命信号时, 内核会将处理动作施加到整个线程组中。
 
-## 三、线程创建
+## 三、线程使用
 
 ```c
 /**

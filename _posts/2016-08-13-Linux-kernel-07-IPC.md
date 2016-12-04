@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Linux内核分析（六）进程剖析 - 进程间通信
+title: Linux内核分析（七）进程间通信
 categories: [linux kernel ]
 tags: [linux kernel, ]
 description: APUE 进程间通信
@@ -293,7 +293,6 @@ mmap的匿名文件映射只能在父子进程间共享，因为没有办法将�
 XSI 的key+projid的命名方式不够UNIX，没用遵循一切皆文件的设计理念。因此出现了POSIX 标准的进程通信机制，他们使用文件描述符的方式进行管理，因此可以结合select、poll这样的IO异步事件驱动机制做一些更高级的功能
 
 #### POSIX 共享内存
-
 
 POSIX 共享内存本质上就是mmap对文件的共享方式映射，只不过映射的是tmpfs文件系统上的文件，而不是普通的磁盘文件。
 
